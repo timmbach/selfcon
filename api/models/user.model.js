@@ -16,6 +16,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    profileImg: {
+      type: String,
+      default:
+        "https://alumni.crg.eu/sites/default/files/default_images/default-picture_0_0.png",
+    },
   },
   { timestamps: true }
 );

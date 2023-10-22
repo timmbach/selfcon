@@ -6,9 +6,11 @@ import cors from "cors";
 import colors from "colors";
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 
+const PORT = 5000;
 mongoose.connect(process.env.MONGODB_URI).then((conn) => {
   console.log(
     `Connected to MongoDB server ${conn.connection.host}`.cyan.underline.bold
@@ -17,8 +19,7 @@ mongoose.connect(process.env.MONGODB_URI).then((conn) => {
 const app = express();
 // app.use(cors);
 app.use(express.json());
-
-const PORT = 5000;
+app.use(cookieParser());
 
 app.use("/api/user", userRouter);
 // auth
