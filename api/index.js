@@ -7,7 +7,6 @@ import colors from "colors";
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
-import cookieParser from "cookie-parser";
 
 dotenv.config();
 
