@@ -66,7 +66,7 @@ export const getAllListings = async (req, res, next) => {
 
     let underOffer = req.query.underOffer;
 
-    if (underOffer === "undefined" || underOffer === "false") {
+    if (underOffer === undefined || underOffer === "false") {
       underOffer = { $in: [false, true] };
     }
 
